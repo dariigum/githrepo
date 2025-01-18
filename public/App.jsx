@@ -1,20 +1,21 @@
-import React from 'react';
-import { Routes, Route } from 'react-router-dom';
-import LandingPage from './components/LandingPage';
-import ProductListingPage from './components/ProductListingPage';
-import ShoppingCartPage from './components/ShoppingCartPage';
-import Header from './components/Header';
-import './App.css';
+import React from "react";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import LandingPage from "./pages/LandingPage";
+import ProductListingPage from "./pages/ProductListingPage";
+import ShoppingCartPage from "./pages/ShoppingCartPage";
+import Header from "./components/Header";
 
-const App = () => (
-  <>
-    <Header />
-    <Routes>
-      <Route path="/" element={<LandingPage />} />
-      <Route path="/products" element={<ProductListingPage />} />
-      <Route path="/cart" element={<ShoppingCartPage />} />
-    </Routes>
-  </>
-);
+const App = () => {
+  return (
+    <Router>
+      <Header />
+      <Routes>
+        <Route path="/" element={<LandingPage />} />
+        <Route path="/products" element={<ProductListingPage />} />
+        <Route path="/cart" element={<ShoppingCartPage />} />
+      </Routes>
+    </Router>
+  );
+};
 
 export default App;
